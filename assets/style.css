@@ -28,7 +28,6 @@
 -----------------------------------------------------------------------------------------
 */
 body{
-    margin: 0  auto;
     background-color: var(--bone);
 }
 
@@ -49,6 +48,14 @@ header .card-info {
 /* 
     
 */
+.card-info h1 {
+    font-size: 250%;
+    float: right;
+}
+
+/* 
+    
+*/
 header ul {
     padding: 20px;
     float: right;
@@ -62,20 +69,11 @@ li {
     margin-left: 15px;
     font-size: 150%;
 }
-/* 
-    
-*/
-h1 {
-    font-size: 250%;
-    color: var(--rust);
-    float: right;
-}
-
 
 /* 
     
 */
-a {
+li a {
     text-decoration: none;
     color:var(--blue);
     font-weight: bold;
@@ -95,13 +93,21 @@ ul {
 */
 
 .hero {
-
+    height: 300px;
+    width: 100%;
+    background-image: url("../assets/images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 25px;
 }
 
 .hero h2 {
     border: none;
     text-align: right;
-    color: var(--blue);
+}
+
+.hero .card-info {
+    position: relative;
 }
 
 /* 
@@ -110,39 +116,27 @@ ul {
                             (Main Contents of page)
 ------------------------------------------------------------------------------------------
 */
-.card{
-    border: 2px solid var(--blue);
-}
-
-.card-info {
-    display: inline-block;
-    background-color: var(--blue);
-    padding: 10px;
-}
-
-.card .card-info{
-    margin: 25px 0;
-}
-
-.card-info h3, .card-info p {
-    margin: 0;
-}
 
 .grid-container h2 {
-    color: var(--blue);
+    color: var(--rust);
     display: inline-block;
-    border-right: solid 3px var(--blue);
+    border-right: solid 3px var(--rust);
     margin: 0;
     padding-right: 20px;
     text-align:right;
-    font-size: 175%;
+    font-size: 300%;
 }
 
 .grid-container{
     display: grid;
-    grid-template-columns: 20% 70% ;
+    grid-template-columns: 25% 65% ;
     grid-gap: 20px;
 }
+
+#about-me p{
+    font-size: 125%;
+}
+
 /* 
 ------------------------------------------------------------------------------------------
                         Work container styling
@@ -151,13 +145,49 @@ ul {
 */
 .work-container{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-areas: "header header header";
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "header header";
     grid-gap: 20px;
 }
 
-.card-1 {
+.project-1 {
     grid-area: header;
+}
+
+
+.card{
+    border: 4px solid var(--blue);
+    background-color:#1b4e80;
+    height: 200px;
+}
+
+.card-info {
+    display: inline-block;
+    background-color: var(--blue);
+    padding: 10px;
+    color:var(--rust);
+}
+
+.card .card-info{
+    position: relative;
+    bottom: 100px;
+}
+
+.card img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 65%;
+    transition: 300ms;
+}
+
+.card:hover img{
+    opacity: 100%;
+}
+
+.project-1 {
+    height: 400px;
+    overflow: hidden;
 }
 
 /* 
@@ -175,7 +205,27 @@ ul {
 
 /* 
 ------------------------------------------------------------------------------------------
+                        Footer
+------------------------------------------------------------------------------------------
+*/
+
+footer {
+    background-color: var(--rust);
+    margin-top: 20px;
+}
+
+footer h4 {
+    padding:15px;
+    text-align: center;
+    color:var(--bone);
+}
+
+/* 
+------------------------------------------------------------------------------------------
                         Media Query
                         
 ------------------------------------------------------------------------------------------
 */
+@media screen {
+    
+}
