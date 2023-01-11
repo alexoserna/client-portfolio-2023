@@ -99,6 +99,7 @@ ul {
     background-size: cover;
     background-position: center;
     margin-bottom: 25px;
+    position: relative;
 }
 
 .hero h2 {
@@ -107,7 +108,20 @@ ul {
 }
 
 .hero .card-info {
-    position: relative;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+#profile {
+    width: 150px;
+    height: 150px;
+    border: solid 3px var(--bone);
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
 }
 
 /* 
@@ -159,6 +173,7 @@ ul {
     border: 4px solid var(--blue);
     background-color:#1b4e80;
     height: 200px;
+    position: relative;
 }
 
 .card-info {
@@ -169,8 +184,9 @@ ul {
 }
 
 .card .card-info{
-    position: relative;
-    bottom: 100px;
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
 }
 
 .card img{
@@ -196,6 +212,11 @@ ul {
 ------------------------------------------------------------------------------------------
 */
 
+.reach-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .reach-me li {
     margin-left: 0;
