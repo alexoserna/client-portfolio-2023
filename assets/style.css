@@ -23,7 +23,6 @@
 /* 
 -----------------------------------------------------------------------------------------
                         Styles the body of the page 
-    -reset default margin
     -added background color
 -----------------------------------------------------------------------------------------
 */
@@ -36,52 +35,45 @@ body{
                         Styling the header and its contents
 ------------------------------------------------------------------------------------------
 */
+/* Sets the background color and padding values */
 header{
     background-color: var(--rust);
     padding: 20px 0px;
 }
 
+/* sets the width */
 header .card-info {
     width: 20%;
 }
 
-/* 
-    
-*/
+/* adjust font size and float to the right */
 .card-info h1 {
     font-size: 250%;
     float: right;
 }
 
-/* 
-    
-*/
+/* adds padding and a right float */
 header ul {
     padding: 20px;
     float: right;
 }
 
-/*
-
-*/
+/* sets display to inline, adds margin, and adjusts font size */
 li {
     display: inline-block;
     margin-left: 15px;
     font-size: 150%;
 }
 
-/* 
-    
-*/
+/* removes text decoration, sets color, font-weight and adds a border */
 li a {
     text-decoration: none;
     color:var(--blue);
     font-weight: bold;
     border-bottom: 3px solid var(--blue);
 }
-/* 
-    
-*/
+
+/* removes list styles */
 ul {
     list-style: none;
 }
@@ -91,7 +83,7 @@ ul {
                         Styling the Hero and its contents
 ------------------------------------------------------------------------------------------
 */
-
+/* sets height to 300px and width to span the page, sets background image, position, margin and background position */
 .hero {
     height: 300px;
     width: 100%;
@@ -102,17 +94,20 @@ ul {
     position: relative;
 }
 
+/* removes border and aligns text to the right */
 .hero h2 {
     border: none;
     text-align: right;
 }
 
+/* sets position to absolute, and to stick to the bottom right corner */
 .hero .card-info {
     position: absolute;
     bottom: 0px;
     right: 0px;
 }
-
+ 
+/* Sets the height and width of the profile image in the hero banner, border, border radius, and position values */
 #profile {
     width: 150px;
     height: 150px;
@@ -130,7 +125,7 @@ ul {
                             (Main Contents of page)
 ------------------------------------------------------------------------------------------
 */
-
+/* Sets the h2 color, display property, border, margin, padding, and text align, as well as higher font size. */
 .grid-container h2 {
     color: var(--rust);
     display: inline-block;
@@ -141,12 +136,14 @@ ul {
     font-size: 300%;
 }
 
+/*Creates the main container with 2 columns the 1st column being 25%vp and the other 65% with a grid gap of 20px*/
 .grid-container{
     display: grid;
     grid-template-columns: 25% 65% ;
     grid-gap: 20px;
 }
 
+/* adjusts font size */
 #about-me p{
     font-size: 125%;
 }
@@ -157,6 +154,7 @@ ul {
                             (Grid within another grid item)
 ------------------------------------------------------------------------------------------
 */
+/* Sets display to grid, 2 columns, areas at the top, and grid gap 20px */
 .work-container{
     display: grid;
     grid-template-columns: 50% 50%;
@@ -164,11 +162,12 @@ ul {
     grid-gap: 20px;
 }
 
+/* sets grid area */
 .project-1 {
     grid-area: header;
 }
 
-
+/* creates a border, background color to show through low opacity, height, and relative position */
 .card{
     border: 4px solid var(--blue);
     background-color:#1b4e80;
@@ -176,6 +175,7 @@ ul {
     position: relative;
 }
 
+/* changes display properties, background color, color and padding */
 .card-info {
     display: inline-block;
     background-color: var(--blue);
@@ -183,12 +183,14 @@ ul {
     color:var(--rust);
 }
 
+/* sets position values */
 .card .card-info{
     position: absolute;
     bottom: 20px;
     left: 0px;
 }
 
+/* sets fit of image to cover to fill img container sets opacity to 65% and a 300ms transition */
 .card img{
     object-fit: cover;
     height: 100%;
@@ -197,10 +199,12 @@ ul {
     transition: 300ms;
 }
 
+/* on hover set opacity to 100% */
 .card:hover img{
     opacity: 100%;
 }
 
+/* sets height to 400px and hides overflow */
 .project-1 {
     height: 400px;
     overflow: hidden;
@@ -212,12 +216,14 @@ ul {
 ------------------------------------------------------------------------------------------
 */
 
+/* adjust the display property, aligns item center, and evenly spaces content */
 .reach-me {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
+/* resets margins and makes the font size larger */
 .reach-me li {
     margin-left: 0;
     margin-right: 25px;
@@ -230,11 +236,13 @@ ul {
 ------------------------------------------------------------------------------------------
 */
 
+/* adds background color and margin */
 footer {
     background-color: var(--rust);
     margin-top: 20px;
 }
 
+/* h4 element recieves padding, is aligned to center, and gets a color value */
 footer h4 {
     padding:15px;
     text-align: center;
@@ -247,6 +255,88 @@ footer h4 {
                         
 ------------------------------------------------------------------------------------------
 */
-@media screen {
-    
+/* Media Query for mid size screen */
+@media screen and (max-width: 1022px) {
+    /* Adjusts profile position to be centered left-right
+       and slightly closer to the top */
+    #profile {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    /* Adjusts the quote to have smaller text and fill the page width */
+    .hero .card-info {
+        width: 100%;
+        font-size: 85%;
+    }
+}
+
+/* Media Query for small size screen */
+@media screen and (max-width: 790px) {
+
+    /*
+    ----------------------------------
+            Header
+    ----------------------------------
+    */
+    /* Sets banner with name to span the entire width */
+    header .card-info {
+        width: 100%;
+    }
+    /* the h1 Resets the float value and instead text-aligns center */
+    header .card-info h1, header ul {
+        float: none;
+        text-align: center;
+    }
+
+    /* Resets the position to be slightly higher */
+    #profile {
+        top: 30%;
+    }
+
+    /* 
+    ----------------------------------
+            Main container 
+    ---------------------------------- 
+    */
+    /* aligns content in the center, resets the grid to have one column */
+    .grid-container {
+        align-content: center;
+        grid-template-columns: 100% ;
+        grid-gap: 20px;
+    }
+    /* resets display value, changes border from the right side to the bottom and aligns the text in the center */
+    .grid-container h2 {
+        display: block;
+        border-bottom: solid 3px var(--rust);
+        border-right: none;
+        text-align: center;
+    }
+    /* resets margins */
+    p {
+       margin: 10px;
+    }
+    /* allows work container to span 90% of viewport width and removes grid gap */
+    .work-container {
+        width: 90%;
+        margin: auto;
+        grid-template-columns: 100%;
+        grid-gap: 0;
+        grid-row-gap: 20px;
+    }
+    /* changes span of elements in the grid */
+    .card {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    /* resets height of main project */
+    .project-1 {
+        height: 200px;
+    }
+
+    /* resets li display value to block */
+    .reach-me li {
+        display: block;
+    }
+
 }
